@@ -10,6 +10,7 @@ variable "adminPassword" {}
 variable "image" {}
 variable "tags" {}
 variable "zones" {}
+variable "disks" {}
 variable "delete_os_disk_on_termination" {
     default = true
 }

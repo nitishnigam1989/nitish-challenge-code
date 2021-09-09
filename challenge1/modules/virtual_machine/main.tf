@@ -40,6 +40,17 @@ resource "azurerm_virtual_machine" "vm" {
             version   = var.image.version
         }
     }
+    dynamic "storage_data_disk" {
+        for_each = can(var.disks) ? var.disks : {}
+        content {
+            name = format("%s-%s",each.key,storage_data_disk.key)
+            create_option = "Attach"
+            disk_size_gb = storage_data_disk.value.size
+            lun = storage_data_disk.value.lun
+
+        }
+
+    }
     storage_os_disk {
         name              = format("%s-%s",each.key,"osdisk")
         caching           = "ReadWrite"

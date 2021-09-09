@@ -30,6 +30,7 @@ module "web_virtual_machine" {
     zones = var.zones
     networkRg = var.vnet.rgName
     image = var.image
+    disks = var.webVm.disks
     adminUsername = var.adminUsername
     adminPassword = var.adminPassword
     tags = var.webVm.tags
@@ -47,6 +48,7 @@ module "app_virtual_machine" {
     zones = var.zones
     networkRg = var.vnet.rgName
     image = var.image
+    disks = var.appVm.disks
     adminUsername = var.adminUsername
     adminPassword = var.adminPassword
     tags = var.appVm.tags
@@ -64,6 +66,7 @@ module "db_virtual_machine" {
     zones = var.zones
     networkRg = var.vnet.rgName
     image = var.image
+    disks = var.dbVm.disks
     adminUsername = var.adminUsername
     adminPassword = var.adminPassword
     tags = var.dbVm.tags

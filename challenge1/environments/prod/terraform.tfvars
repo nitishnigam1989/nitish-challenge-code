@@ -36,6 +36,12 @@ webVm = {
     count = 5
     vmSize = "Standard_DS5_v2"
     rgName = "azwebtier-rg"
+    disks = {
+        webdisk1 = {
+            size = "100"
+            lun = "10"
+        }
+    }
     tags = {
         environment = "production"
         owner = "Nitish Nigam"
@@ -48,6 +54,12 @@ appVm = {
     count = 1
     vmSize = "Standard_DS5_v2"
     rgName = "azapptier-rg"
+    disks = {
+        appdisk1 = {
+            size = "100"
+            lun = "10"
+        }
+    }
     tags = {
         environment = "production"
         owner = "Nitish Nigam"
@@ -60,6 +72,12 @@ dbVm = {
     count = 1
     vmSize = "Standard_DS5_v2"
     rgName = "azdbtier-rg"
+    disks = {
+        dbdisk1 = {
+            size = "100"
+            lun = "10"
+        }
+    }
     tags = {
         environment = "production"
         owner = "Nitish Nigam"
